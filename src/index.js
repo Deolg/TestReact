@@ -3,8 +3,8 @@ import { render } from 'react-dom'
 import ArticleList from './ArticleList'
 import { articles } from './fixtures'
 
-function HelloWorld() {
-    return <h2> Hello </h2>
+function HelloWorld(){
+    return <h2>Hello</h2>
 }
 
 render(<ArticleList articles={articles} />, document.getElementById('container'));
