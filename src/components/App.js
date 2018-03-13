@@ -4,13 +4,16 @@ import React, { Component } from 'react'
 
 import ArticleList from './ArticleList'
 
-import UserForm from './UserForm'
-
 import Select from 'react-select'
 
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
+
+
 class App extends Component {
-    state = {
-        selection: null
+
+    selection: null
+        state = {
     }
 
     render() {
@@ -21,7 +24,7 @@ class App extends Component {
 
         return (
             <div>
-                <UserForm />
+                <DayPicker/>
                 <Select options={options} value={this.state.selection} onChange={this.changeSelection} multi/>
                 <ArticleList articles={this.props.articles} />
             </div>

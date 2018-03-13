@@ -34,13 +34,13 @@ class Article extends Component {
                 <button onClick={toggleOpen}>
                     {isOpen ? 'close' : 'open'}
                 </button>
-                {/* {this.getBody()} */}
                 <CSSTransitionGroup
                     transitionName="example"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={200}
                 >
                     {this.getBody()}
+
                 </CSSTransitionGroup>
 
                 {this.getComments(article.comments)}
@@ -68,11 +68,7 @@ class Article extends Component {
         if (!isOpen || !comments) return null
         return <section><Comments ref={this.getCommentsRef} comments={comments} key={this.state.updateIndex} /></section>
     }
-
-    getCommentsRef = (ref) => {
-
-    }
-
+    
 }
 
 export default toggleOpen(Article)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import toggleOpen from '../decorators/toggleOpen'
+import CommentForm from './CommentForm'
 
 
 class Comments extends Component {
@@ -12,21 +13,42 @@ class Comments extends Component {
         })
     }
 
+    state={
+        newComment:false
+    }
+    
+
     render() {
         const { comments, isOpen, toggleOpen } = this.props
         const commentsElements = comments.map((comment) => {
-            return <p key={comment.id}> {comment.text} </p>
+            return <p key={comment.id}> <b>{comment.user}</b>  {comment.text} </p>
         })
         return (
             <div>
                 <button onClick={toggleOpen}>
-                    {isOpen ? 'hide' : 'show'}
+                    {isOpen ? 'Hide Comments' : 'Show Comments'}
                 </button>
-                <div className="test">
+                <button onClick={this.addComment}>
+                    'Новый комментарий'
+                </button>
+                
+                <div className="commentsElements">
                     {isOpen ? commentsElements : null}
                 </div>
+
+                <div className="newComment">
+                    {this.state.newComment ? <CommentForm /> :null }
+                </div>
+
             </div>
         )
     }
+
+    addComment=()=>{
+        this.setState({
+            newComment: true
+        })
+    }
+   
 }
 export default toggleOpen(Comments)
