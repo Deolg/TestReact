@@ -12,20 +12,21 @@ import 'react-day-picker/lib/style.css';
 
 class App extends Component {
 
-    selection: null
-        state = {
+    
+    state = {
+        selection: null
     }
 
     render() {
-        const options = this.props.articles.map(article =>({
+        const options = this.props.articles.map(article => ({
             label: article.title,
             value: article.id
         }))
 
         return (
             <div>
-                <DayPicker/>
-                <Select options={options} value={this.state.selection} onChange={this.changeSelection} multi/>
+                <DayPicker />
+                <Select options={options} value={this.state.selection} onChange={this.changeSelection} multi />
                 <ArticleList articles={this.props.articles} />
             </div>
         );
