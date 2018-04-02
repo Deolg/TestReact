@@ -8,6 +8,7 @@ import Select from 'react-select'
 
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import Counter from './Counter'
 
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
 
         return (
             <div>
+                <Counter />
                 <DayPicker />
                 <Select options={options} value={this.state.selection} onChange={this.changeSelection} multi />
                 <ArticleList articles={this.props.articles} />

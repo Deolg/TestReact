@@ -21,7 +21,13 @@
   "homepage": "https://github.com/romabelka/js_ru_08_06_17",
   "babel": {
     "presets": [
-      "es2015",
+      [
+        "es2015",
+        {
+          "modules": false,
+          "loose": true
+        }
+      ],
       "react"
     ],
     "plugins": [
@@ -44,6 +50,7 @@
     "webpack-dev-server": "^2.0.0"
   },
   "dependencies": {
+    "babel-preset-env": "^1.6.1",
     "history": "^4.6.3",
     "immutable": "^3.8.1",
     "prop-types": "^15.6.1",
@@ -55,8 +62,10 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-select": "^1.0.0-rc.5",
     "react-transition-group": "^1.2.1",
-    "redux": "^3.7.0",
+    "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "redux-logger": "^2.6.1",
+    "react-redux-provide": "^5.2.3",
     "reselect": "^3.0.1"
   }
 }
