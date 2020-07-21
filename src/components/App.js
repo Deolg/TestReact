@@ -12,8 +12,6 @@ import Counter from './Counter'
 
 
 class App extends Component {
-
-    
     state = {
         selection: null
     }

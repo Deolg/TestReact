@@ -5,15 +5,7 @@ export default (OriginalComponent) => class WrappedComponent extends Component {
     state ={
         isOpen:false
     }
-
-    componentDidMount(){
-        console.log('------','mounting')    
-    }
-
-    componentDidUpdate(){
-        console.log('----','updating')
-    }
-
+    
     render() {
         return <OriginalComponent {...this.props} isOpen={this.state.isOpen} toggleOpen={this.toggleOpen} />
     }
